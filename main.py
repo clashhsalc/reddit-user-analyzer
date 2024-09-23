@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 def get_user_data(username):
     all_comments = []
     after = None
-    headers = {'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'}
+    headers = {'User-agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'}
 
     while True:
         url = f"https://www.reddit.com/user/{username}.json?limit=99"
