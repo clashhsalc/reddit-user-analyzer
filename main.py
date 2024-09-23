@@ -11,7 +11,7 @@ def get_user_data(username):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
 
     while True:
-        url = f"https://www.reddit.com/user/{username}.json?limit=100"
+        url = f"https://www.reddit.com/user/{username}.json?limit=99"
         if after:
             url += f"&after={after}"
 
