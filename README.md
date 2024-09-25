@@ -65,7 +65,7 @@ Analyze Reddit user activity with visualizations and insights.
 
 ## Contributing
 
-We welcome contributions! Please feel free to submit a Pull Request.
+I welcome contributions! Please feel free to submit a Pull Request or open an Issue
 
 ## Disclaimer
 
