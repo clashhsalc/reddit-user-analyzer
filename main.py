@@ -19,7 +19,7 @@ def get_user_data(username):
 
         response = requests.get(url, headers=headers)
 
-        # Handling errors
+        #returns an error when hosted on streamlit community cloud (unfixed)
         if response.status_code == 403:
             st.error("Access forbidden: Reddit is blocking the request. Try a different network or method.")
             return None
