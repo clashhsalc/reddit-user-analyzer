@@ -8,15 +8,22 @@ import matplotlib.pyplot as plt
 def get_user_data(username):
     all_comments = []
     after = None
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    }
 
     while True:
-        url = f"https://www.reddit.com/user/{username}.json?limit=99"
+        url = f"https://www.reddit.com/user/{username}/comments.json?limit=99"
         if after:
             url += f"&after={after}"
 
         response = requests.get(url, headers=headers)
-        if response.status_code != 200:
+
+        # Handling errors
+        if response.status_code == 403:
+            st.error("Access forbidden: Reddit is blocking the request. Try a different network or method.")
+            return None
+        elif response.status_code != 200:
             st.error(f"Error fetching data: {response.status_code}")
             return None
 
